@@ -7,7 +7,7 @@ Evaluates python strings as async code
 ```python
 # inside an `async def`
 from meval import meval
-await meval("await thing", thing=my_function(arg=1))
+await meval("await thing", globals(), thing=my_function(arg=1))
 ```
 
 ## License
