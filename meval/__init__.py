@@ -4,13 +4,13 @@ import types
 
 
 # We dont modify locals VVVV ; this lets us keep the message available to the user-provided function
-async def meval(code, **kwargs):
+async def meval(code, globs, **kwargs):
     # This function is released in the public domain. Feel free to kang it (although I like credit)
     # Note to self: please don't set globals here as they will be lost.
     # Don't clutter locals
     locs = {}
     # Restore globals later
-    globs = globals().copy()
+    globs = globs.copy()
     # This code saves __name__ and __package into a kwarg passed to the function.
     # It is set before the users code runs to make sure relative imports work
     global_args = "_globs"
