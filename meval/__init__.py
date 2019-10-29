@@ -83,9 +83,4 @@ async def meval(code, globs, **kwargs):
             r[i] = await r[i]  # workaround for 3.5
     if len(r) == 1:
         [r] = r
-    try:
-        globals().clear()
-        # Inconsistent state
-    finally:
-        globals().update(**globs)
     return r
