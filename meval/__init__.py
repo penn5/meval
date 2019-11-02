@@ -81,6 +81,10 @@ async def meval(code, globs, **kwargs):
     for i in range(len(r)):
         if isinstance(r[i], types.CoroutineType):
             r[i] = await r[i]  # workaround for 3.5
+    i = 0
+    while i < len(r) - 1:
+        if r[i] is None:
+            del r[i]
     if len(r) == 1:
         [r] = r
     return r
