@@ -85,6 +85,8 @@ async def meval(code, globs, **kwargs):
     while i < len(r) - 1:
         if r[i] is None:
             del r[i]
+        else:
+            i += 1
     if len(r) == 1:
         [r] = r
     return r
