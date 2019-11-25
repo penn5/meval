@@ -39,6 +39,9 @@ async def meval(code, globs, **kwargs):
         if ok:
             break
 
+    if not code:
+        return None
+
     for i in range(len(code)):
         if isinstance(code[i], ast.Expr):
             if i == len(code) - 1 or not isinstance(code[i].value, ast.Call):
