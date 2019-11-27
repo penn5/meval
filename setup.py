@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="meval",
-    version="2.4",
+    version="2.5",
     author="Hackintosh 5",
     author_email="hackintoshfive@gmail.com",
     description="Performs async evaluations of strings",
